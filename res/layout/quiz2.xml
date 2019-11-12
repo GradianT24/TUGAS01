@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    <EditText
+        android:id="@+id/angkaa"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="masukkan angka a"
+        />
+    
+    <EditText
+        android:id="@+id/angkab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="masukkan angka b"
+        android:layout_below="@+id/angkaa"
+        />
+    
+    <EditText
+        android:id="@+id/angkac"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="masukkan angka c"
+        android:layout_below="@+id/angkab"
+        />
+    
+    <Button
+        android:id="@+id/tombol1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="bandingkan"
+        android:layout_below="@+id/angkac"
+        />
+    
+    <TextView
+        android:id="@+id/thasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tombol1"
+        />
+    
+
+</RelativeLayout>

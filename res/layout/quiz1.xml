@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <EditText 
+        android:id="@+id/angka1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="masukkan angka 1"
+        
+        />
+    
+    <EditText 
+        android:id="@+id/angka2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan angka 2"
+        android:layout_below="@+id/angka1"
+        />
+    
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Bandingkan"
+        android:layout_below="@+id/angka2"
+        
+        />
+    
+    <TextView
+        android:id="@+id/tvhasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn3"
+        />
+    
+    
+
+</RelativeLayout>

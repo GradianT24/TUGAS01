@@ -1,14 +1,21 @@
 package com.example.latihanquiz;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	Button bquiz1, bquiz2;
+	
+	ListView lv1;
+	String[] menu = {"profil", "quiz", "keluar"};
 	
 
     @Override
@@ -16,34 +23,32 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        bquiz1=(Button)findViewById(R.id.btnquiz1);
-        bquiz2=(Button)findViewById(R.id.btnquiz2);
-        
-        bquiz1.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
+        lv1=(ListView)findViewById(R.id.list1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,menu);
+        lv1.setAdapter(adapter);
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@SuppressLint("ShowToast") @Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
 				// TODO Auto-generated method stub
-				Intent intent1 = new Intent(MainActivity.this,Quiz1.class);
-				startActivity(intent1);
-				
-			}
-		});
-        
-        bquiz2.setOnClickListener(new View.OnClickListener() {
+				if (arg2 == 0) {
+					Intent intentprofil = new Intent (MainActivity.this,Profil.class);
+					startActivity (intentprofil);
+				}
+				else if (arg2 == 1) {
+					Intent intentquiz = new Intent (MainActivity.this,Halamanquiz.class);
+					startActivity (intentquiz);
+				}
+					
 			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent2 = new Intent(MainActivity.this,Quiz2.class);
-				startActivity(intent2);
-				
-			}
-		});
-        
+			
+			}     	
+		});  
     }
-
-
+   
+ 
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
